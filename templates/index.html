@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrotrip - Khám Phá Việt Nam</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .hero-section {
+            /* Cập nhật đường dẫn ảnh banner theo chuẩn Flask */
+            background: linear-gradient(rgba(10, 24, 55, 0.65), rgba(10, 24, 55, 0.65)), 
+                        url("{{ url_for('static', filename='images/banner.jpg') }}") no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .navbar-brand img {
+            max-height: 40px; 
+            margin-right: 10px;
+        }
+        .brand-text {
+            color: #ffc107 !important;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info-section {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+        .contact-icon {
+            color: #0d6efd;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png', v=1) }}" alt="Logo">
+                <span class="brand-text">ASTROTRIP</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('home') }}">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('tours') }}">Danh Sách Tour</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Trải nghiệm vẻ đẹp Việt Nam</h1>
+            <p class="lead mb-5 fs-4">Hành trình độc bản khám phá những vùng đất mới cùng Astrotrip. Đặt tour dễ dàng, trải nghiệm trọn vẹn.</p>
+            <a href="{{ url_for('tours') }}" class="btn btn-warning btn-lg fw-bold px-5 py-3 shadow">Xem Các Tour Ngay</a>
+        </div>
+    </header>
+
+    <section class="contact-info-section py-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-3">
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        <h5 class="fw-bold">Địa Chỉ Trụ Sở</h5>
+                        <p class="text-muted mb-0">120 Nguyễn Huệ, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3">
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <h5 class="fw-bold">Email Hỗ Trợ</h5>
+                        <p class="mb-0"><a href="mailto:astrotrip@gmail.com" class="text-decoration-none text-muted">astrotrip@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3">
+                        <i class="fa-solid fa-phone contact-icon"></i>
+                        <h5 class="fw-bold">Hotline Tư Vấn</h5>
+                        <p class="mb-0"><a href="tel:19001234" class="text-decoration-none text-warning fw-bold fs-5">1900 1234</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0 opacity-75">© 2026 Astrotrip Việt Nam. Thiết kế cho bài tập thực hành.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
